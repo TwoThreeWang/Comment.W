@@ -236,3 +236,6 @@ https://github.com/itorr/q.js
 
 SomeBottle/Comment.B: 简单的无数据库评论框系统
 https://github.com/SomeBottle/Comment.B
+
+hangxingliu/mdjs: A Lightweight Markdown Parser (JavaScript)
+https://github.com/hangxingliu/mdjs
