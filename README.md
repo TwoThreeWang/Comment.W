@@ -14,6 +14,10 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 
 详细介绍：[https://comment.wangtwothree.com/#!doc](https://comment.wangtwothree.com/#!doc)
 
+# 评论界面
+
+![图片alt](https://cdn.wangtwothree.com/imgur/rEBiQpV.png)
+
 # 功能特性
 
 - 轻量、简单、快速、安全、高颜值，可灵活自定义样式
@@ -29,19 +33,19 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 
 # 后台功能截图
 
-![图片alt](https://cdn.wangtwothree.com/imgur/JkoyoMP.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/JkoyoMP.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/0nr2thP.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/0nr2thP.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/34Vnv89.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/34Vnv89.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/vaM5SNV.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/vaM5SNV.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/s1Ke3w6.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/s1Ke3w6.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/hxtUQwn.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/hxtUQwn.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/3D6HUZ1.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/3D6HUZ1.png)
 
 # TODO
 
@@ -195,15 +199,15 @@ location ^~ /api/
 如果设置了域名，则接口会校验来路域名是否包含在此处设置的域名中，非允许域名不允许评论及获取评论数据等任何操作；
 一个站点可设置多个域名，使用英文逗号分隔即可，如："abc.com,def.com,aaa.com"
 
-![图片alt](https://cdn.wangtwothree.com/imgur/qz9j8ja.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/qz9j8ja.png)
 
-![图片alt](https://cdn.wangtwothree.com/imgur/e6rP4Dy.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/e6rP4Dy.png)
 
 **3、站点管理**
 
 该页面可以修改站点名称及域名设置，同时该站点的评论框嵌入代码也在此处获取
 
-![图片alt](https://cdn.wangtwothree.com/imgur/q1l0Uog.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/q1l0Uog.png)
 
 嵌入代码 comment\_w\_config 参数中 api 为你自己的后端接口 API 地址； sid 为站点 ID，每个站点只有一个唯一ID，不可修改；key 为页面的标识符，可自定义，同一站点有多个页面，设置不同的 key 即可。
 
@@ -213,13 +217,13 @@ location ^~ /api/
 
 站点和页面两个选项为必选框，搜索框如果为空，默认获取该站点页面下的所有评论；搜索框不为空时，会模糊搜索匹配用户名和内容相关的评论数据
 
-![图片alt](https://cdn.wangtwothree.com/imgur/aoGhutS.png ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/aoGhutS.png)
 
 # 赞助
 
 如果你觉得 Comment.W 对你有帮助，或者想对我微小的工作一点资瓷，欢迎扫码赞助。
 
-![图片alt](https://cdn.wangtwothree.com/imgur/P77PJh2.png=150x200 ''图片title'')
+![图片alt](https://cdn.wangtwothree.com/imgur/P77PJh2.png=150x200)
 
 # 巨人的肩膀
 
