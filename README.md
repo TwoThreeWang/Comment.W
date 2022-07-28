@@ -225,7 +225,7 @@ location ^~ /api/
 
 # 巨人的肩膀
 
-tiangolo/fastapi: FastAPI framework, high performance, easy to learn, fast to code, ready for production
+tiangolo/fastapi: FastAPI
 https://github.com/tiangolo/fastapi
 
 itorr/iTorr.js: 基础类框架
