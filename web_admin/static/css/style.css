@@ -1,0 +1,41 @@
+html,body{margin:0;height:100%;width:100%;color:#333;font-weight:350;letter-spacing: .009em;font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;}
+::-webkit-details-marker{display:none}
+::-moz-list-bullet{font-size:0;float:left}
+a{text-decoration:none;color:#2E9AFE}
+.head{background-color:aliceblue;display:flex;display:-webkit-flex;flex-wrap:wrap;justify-content:space-between;position:fixed;width:100%;top:0;z-index:999}
+.head a{color:#333;}
+.logo{padding-left:20px;margin:3px 0px;text-align:center;font-size:20px;font-weight:500;vertical-align:middle}
+.logo span{background-color:#2E9AFE;border-radius:5px;padding:2px 10px;margin-right:10px;color:#fff}
+.nav{line-height:30px}
+.nav a{padding:8px 15px}
+.nav a:hover{background-color:#b1d9fc}
+#msg{max-width:300px;margin:50px auto 5px;padding:5px 20px;border-radius:5px;color:#fff}
+.success{background-color:#67C23A;opacity:1}
+.error{background-color:#F56C6C;opacity:1}
+.info{background-color:#909399;opacity:1}
+.hide{animation-name:hideme;animation-duration:1s;animation-delay:0s;animation-timing-function:linear;opacity:0}
+@keyframes hideme{0%{opacity:1}
+50%{opacity:1}
+100%{opacity:0}
+}
+#content{margin:10px auto;max-width:900px;line-height:2.5;padding:0 15px}
+#content a{text-decoration:underline}
+.top{position:fixed;bottom:50px;right:0}
+.top a{padding:5px 10px;background-color:aliceblue;display:block;margin-top:2px;text-decoration:none !important}
+.top a:hover{background-color:#c2ecff}
+#footer{margin-top:30px;text-align:center;padding:10px;font-size:15px;color:#757575}
+#qrcode img{width:90px}
+input{font-size:18px;height:40px;border-radius:5px;border:1px solid #c8cccf;outline:0;padding:0 10px;display:block;margin-bottom:10px;}
+button{background-color:#2E9AFE;color:#fff;padding:5px 20px;border:none;border-radius:5px;font-size:18px}
+.all-input input{margin:10px 0}
+textarea{font-size:18px;border-radius:5px;border:1px solid #c8cccf;outline:0;padding:10px;display:block;margin:10px 0}
+.card{display:-webkit-flex;display:flex;flex-wrap:wrap;}
+.card-item{padding:10px 20px;margin:10px;background-color:#f0f0f0;border-radius:5px;font-size:20px;font-weight:800;text-decoration:none !important}
+.card-item:hover{background-color:#e3e2e2}
+.site-info{font-size: 15px;}
+.site-info a{padding:0 5px;text-decoration:none !important;}
+h4{margin: 0;}
+xmp{line-height:1.5}
+#comment_w{max-width: 900px;margin:auto}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{width:0px;}

@@ -1,0 +1,29 @@
+#comments{padding:10px;background-color:#fff;font-size:15px;line-height:1.47059;font-weight:400;font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;color:#1d1d1f;font-style:normal}
+.coms_body{padding:5px}
+.com_body{margin:5px 0 0 0;padding:5px}
+.com_name{font-weight:600}
+.com_time{font-weight:300;font-size:small;color:#a1a1a1;margin-left:10px}
+.com_admin{background-color:#d7e0ff;border-radius:3px;padding:3px 5px;font-size:10px;margin-left:5px}
+.com_button_reply{font-size:small;color:#a1a1a1;margin-left:10px;text-decoration:none;display:none}
+.com_body:hover .com_button_reply{display:inline}
+.com_content{padding:6px 10px}
+.com_reply{background-color:#f9f9f9;margin:0 0 3px 30px;padding:5px 8px}
+.com_reply_body{padding:5px}
+.com_reply_body textarea{width:99%;border-radius:5px;border:1px solid #c8cccf;outline:0;padding:10px;display:block;margin:0 auto;}
+.com_reply_button{display:flex;display:-webkit-flex;justify-content:space-between;flex-wrap:wrap;margin:10px 5px}
+.com_reply_button span{margin:5px 3px}
+.com_reply_body .com_button{padding:5px 10px;background-color:#f0f0f0}
+.com_reply_body .com_button:hover,.com_yan span:hover{background-color:#1d1d1f;color:#fff;cursor:pointer}
+.comm_button_body{display:flex;display:-webkit-flex;justify-content:space-end;flex-wrap:wrap}
+.com_yan{margin-top:5px;margin-bottom:-5px;padding:5px;line-height:2.5}
+.com_yan span{border:solid 1px #f0f0f0;padding:5px 10px;margin-right:3px}
+.com_login input{display:inline;padding:0 10px;border-radius:2px;height:30px;font-size:15px;width:initial;border:1px solid #c8cccf;margin:0 3px;}
+.com_user{line-height:30px}
+#com_username{font-weight:600}
+.com_reply_msg{background-color:#f0f0f0;padding:5px;border-radius:5px}
+.com_reply_msg span{float:right;cursor:pointer}
+#com_more{background-color:#f9f9f9;padding:5px;text-align:center;cursor:pointer}
+.com_imageBox{display: -webkit-flex;display: flex;flex-wrap:wrap;}
+.overlay{background-color:rgba(24 23 23 / 0.85);position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;overflow:auto;display:flex;justify-content:center;align-items:center;flex-direction:row}
+.overlayimg{max-height:95%;max-width:95%}
+.com_img{float:left;width:80px;height:80px !important;padding:5px;object-fit:cover;border-radius:10px}

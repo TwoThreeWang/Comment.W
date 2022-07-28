@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Comment.W ｜ 轻量简洁的评论系统</title>
+    <meta name="keywords" content="Comment.W,评论" />
+    <meta name="description" content="Comment.W 前后端分离嵌入式评论组件，又一款轻量简洁的评论系统" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="stylesheet" href="static/css/style.css"> 
+    <link rel=stylesheet href="comment_w.css">
+</head>
+<body>
+<div class="head" id="head">
+    <a href="/"><div class="logo"><span>Comment.W</span>轻量简洁的评论系统</div></a>
+    <div class="nav">
+        <a href="#!doc">文档</a>
+    </div>
+</div>
+<div id="msg"></div>
+<div id="content"><center>内容加载中...</center></div> 
+<div id="comment_w"></div>
+<div class="top"><a href="javascript:window.scrollTo(0,0)">TOP</a></div>
+<div id="footer">
+    <center><div id="qrcode"></div></center>
+    <p>扫码手机访问</p>
+    Copyright © 2022 Comment.W
+</div>
+<script type="text/javascript" src="static/js/itorr.js"></script>
+<script type="text/javascript" src="static/js/q.js"></script>
+<script type="text/javascript" src="static/js/mdjs.min.js"></script>
+<script type="text/javascript">
+var staticPath='';
+Q.reg('home',function(){
+    $.x('templet/home.html',function(r){
+        $.j('md.css');
+        var html = Mdjs.md2html(r);
+        $('#content').innerHTML= html;
+    });
+});
+Q.reg('doc',function(){
+    $.x('templet/help.html',function(r){
+        $.j('md.css');
+        var html = Mdjs.md2html(r);
+        $('#content').innerHTML= html;
+    });
+});
+Q.init({
+    index:'home'
+});
+</script>
+<script>
+    var comment_w_config = {
+        "api": "https://comment.wangtwothree.com/api",
+        "sid": 1,
+        "key": "HelloWorld"
+    }
+</script>
+<script src="comment_w.js"></script>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js" type="application/javascript"></script>
+<script type="text/javascript">
+new QRCode(document.getElementById("qrcode"), window.location.href);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<h1 id="site_title">站点管理</h1>
+<div class="all-input">
+  <h4 id="sid_item">站点ID：<span id='sid'></span></h4>
+  <h4 id="time_item">创建时间：<span id='create_time'></span></h4>
+  <input type="text" name="sitename" placeholder="站点名称" id="sitename">
+  <textarea rows="5" cols="22" type="text" name="allow_origins" placeholder="允许评论的域名，多个用英文逗号分隔" id="allow_origins"></textarea>
+  <div id="edit_site_but"><button onclick="edit_site()">保存</button><a href="javascript:del_site();" style="margin-left:15px">删除站点</a></div>
+  <div id="add_site_but" style="display:none"><button onclick="add_site()">保存</button></div>
+  <div id="code_item">
+  <h3>嵌入代码：</h3>
+  <xmp id="in_code">
+<link rel=stylesheet href="comment_w.css">
+<div id="comment_w"></div>
+<script>
+  var comment_w_config = {
+    "api": "http://127.0.0.1:1203",
+    "sid": 1,
+    "key": "hello"
+  }
+</script>
+<script src="comment_w.js"></script>
+  </xmp>
+  <hr>
+  <small>key 为自定义页面标识； sid 为站点id；一个站点可以有多个页面。</small>
+</div>
+</div>

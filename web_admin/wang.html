@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>评论管理后台 ｜ Comment.W</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="head" id="head">
+    <a href="#!home"><div class="logo"><span>Comment.W</span>评论管理中心</div></a>
+    <div class="nav">
+        <a href="#!home">首页</a>
+        <a href="#!login">退出</a>
+    </div>
+</div>
+<div id="msg"></div>
+<div id="content"><center>内容加载中...</center></div>
+<div id="footer">
+    Copyright © 2022 Comment.W
+</div>
+<script type="text/javascript" src="static/js/itorr.js"></script>
+<script type="text/javascript" src="static/js/q.js"></script>
+<script type="text/javascript">
+var api = 'https://comment.wangtwothree.com/api';
+var staticPath = '';
+var user = {};
+var site_id = 0;
+var page_key = null;
+var header = {};
+if($.stor('w_user') && $.stor('w_user').indexOf("token") != -1){
+    user = JSON.parse($.stor('w_user'));
+    header = JSON.stringify({"Authorization": user.token,"Content-Type": "application/json"});
+}else{
+    Q.go('login');
+}
+Q.reg('home',function(){
+    $.x('templet/admin/index.html',function(r){
+        $('#content').innerHTML= r;
+        $.j('admin_sites.js');
+    });
+});
+Q.reg('login',function(){
+    localStorage.removeItem('w_user');
+    $.x('templet/admin/login.html',function(r){
+        $.j('login.js');
+        $('#content').innerHTML= r;
+    });
+});
+Q.reg('set_site',function(sid){
+    site_id = sid;
+    $.x('templet/admin/site.html',function(r){
+        $('#content').innerHTML= r;
+        $.j('admin_edit_site.js');
+    });
+});
+Q.reg('comments',function(sid,key){
+    site_id = sid;
+    page_key = key;
+    $.x('templet/admin/comment_select.html',function(r){
+        $('#content').innerHTML= r;
+        $.j('admin_comment_select.js');
+    });
+});
+Q.init({
+    index:'home'
+});
+</script>
+</body>
+</html>
