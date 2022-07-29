@@ -2,7 +2,7 @@ $.x(header, api + '/get/site/', function (r) {
     var html = ''
     if (r['code'] == 405) {
         alertmsg('error', r['message']);
-        console.log(r);
+        // console.log(r);
         Q.go('home');
     } else if (r['code'] != 200) {
         alertmsg('error', '接口报错：' + r['message']);
