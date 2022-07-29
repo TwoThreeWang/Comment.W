@@ -47,7 +47,7 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 
 # TODO
 
-- 评论邮件通知
+- [x] 评论邮件通知
 
 # 技术架构
 
@@ -66,6 +66,7 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 │  ├─ schemas.py    # 数据模式
 ├─ utils            # 通用工具类目录
 │  ├─ toolUtils.py  # 通用工具类
+│  ├─ mailUtils.py  # 邮件工具类
 ├─ web_admin        # 前端代码（可将目录复制出去单独部署）
 │  ├─ static        # 后台页面静态文件
 │  │  ├─ css
@@ -92,6 +93,7 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 │  ├─ comment_w.js   # 嵌入评论框操作函数
 │  ├─ index.html     # 前台首页入口函数
 │  ├─ admin.html     # 后台首页入口函数
+├─ config.ini         # 配置文件
 ├─ data.db          # sqlite 数据文件，程序启动会自动生成
 ├─ main.py          # 后端接口主文件
 ```
