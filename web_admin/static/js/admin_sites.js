@@ -3,7 +3,7 @@ $.x(header, api + '/get/site/', function (r) {
     if (r['code'] == 405) {
         alertmsg('error', r['message']);
         console.log(r);
-        Q.go('login');
+        Q.go('home');
     } else if (r['code'] != 200) {
         alertmsg('error', '接口报错：' + r['message']);
         console.log(r);
