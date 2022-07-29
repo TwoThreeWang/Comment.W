@@ -28,6 +28,7 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 - 后端登录前端同享，避免二次登录
 - 删除站点，站点下所有相关数据全部删除
 - 基于 IP 的发布评论频率限制
+- 评论邮件通知
 
 # 后台功能截图
 
@@ -44,10 +45,6 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 ![图片alt](https://cdn.wangtwothree.com/imgur/hxtUQwn.png)
 
 ![图片alt](https://cdn.wangtwothree.com/imgur/3D6HUZ1.png)
-
-# TODO
-
-- [x] 评论邮件通知
 
 # 技术架构
 
@@ -171,6 +168,7 @@ location ^~ /api/
 
 - 后台接口根据用户真实 IP 限制流量，默认一个用户每分钟最大请求数量为 20 次，限制策略可在 main.py 中修改
 - 可设置多管理员，`routers/auth.py` 文件中 `USER_LIST` 参数为管理员用户设置
+- 如果要使用邮件通知功能，请修改 config.ini 中的邮箱账号配置，部分邮箱需要使用客户端专用密码，邮箱配置参考：https://github.com/zhangyunhao116/zmail/blob/master/README-cn.md
 
 **二、前端部署**
 
