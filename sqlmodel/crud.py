@@ -86,3 +86,9 @@ def db_search_comment(sid: int, page_key: str, key_word: str, db: Session):
                                            or_(models.Comment.content.like('%' + key_word + '%'),
                                                models.Comment.name.like('%' + key_word + '%'),
                                                models.Comment.email.like('%' + key_word + '%'))).all()
+
+
+# 根据评论ID获取评论信息
+def db_get_comment_by_id(sid: int, page_key: str, id: int, db: Session):
+    return db.query(models.Comment).filter(models.Comment.site_id == sid, models.Comment.page_key == page_key,
+                                           models.Comment.id == id).first()

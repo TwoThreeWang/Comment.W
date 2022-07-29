@@ -6,7 +6,7 @@
 # @Site ：https://wangtwothree.com
 # @File    : links.py
 import time, re
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, BackgroundTasks
 from fastapi.params import Depends
 from utils.toolUtils import reponse
 from sqlalchemy.orm import Session
@@ -14,10 +14,12 @@ from routers.auth import check_token, User, get_user
 from sqlmodel.database import SessionLocal
 from sqlmodel import crud, schemas
 from cacheout import Cache
+from utils.mailUtils import MailUtils
 
 cache = Cache(maxsize=256, ttl=60 * 10, timer=time.time, default=None)
 
 router = APIRouter()
+mail = MailUtils()
 
 
 def get_db():
@@ -79,6 +81,7 @@ def check_site(request, sid, db):
     host = request.headers.get("origin", "")
     if host:
         host = host.split('/')[2]
+        host = host.split(':')[0]
     else:
         host = ""
     # print(host)
@@ -91,9 +94,35 @@ def check_site(request, sid, db):
     return False
 
 
+# 新评论发送邮件通知
+def do_send_mail(request, item, db):
+    host = request.headers.get("referer", "")
+    s_data = crud.db_get_site_by_id(db, item.site_id)
+    s_data = schemas.GetSite.from_orm(s_data).dict() if s_data else {}
+    mail_info = {
+        "email": "",
+        "name": "",
+        "site_name": s_data.get('name'),
+        "link": host,
+        "connect": ""
+    }
+    if item.pid != 0:
+        data = crud.db_get_comment_by_id(sid=item.site_id, page_key=item.page_key, id=item.pid, db=db)
+        data = schemas.GetComment.from_orm(data).dict() if data else {}
+        mail_info['email'] = data.get('email')
+        mail_info['name'] = data.get('name')
+        mail_info['connect'] = data.get('content')
+        mail_info['site_name'] = s_data.get('name')
+    else:
+        mail_info['name'] = item.name
+        mail_info['connect'] = item.content
+    mail.send(mail_info)
+
+
 # 增加评论
 @router.post("/add/comment")
-async def add_comment(request: Request, item: schemas.AddCommentBase, db: Session = Depends(get_db)):
+async def add_comment(request: Request, item: schemas.AddCommentBase, backgroundtasks: BackgroundTasks,
+                      db: Session = Depends(get_db)):
     # 判断网站权限
     if check_site(request, item.site_id, db):
         item.content = re.sub(r'</?\w+[^>]*>', '', item.content)
@@ -101,6 +130,7 @@ async def add_comment(request: Request, item: schemas.AddCommentBase, db: Sessio
         item.email = re.sub(r'</?\w+[^>]*>', '', item.email)
         item.page_key = re.sub(r'</?\w+[^>]*>', '', item.page_key)
         data = crud.db_add_comment(db=db, item=item)
+        backgroundtasks.add_task(do_send_mail, request, item, db)  # 后台发送邮件
         return reponse(data=schemas.GetComment.from_orm(data).dict())
     else:
         return reponse(code=403, data='该网址无权创建评论，请到后台添加网址白名单！')
