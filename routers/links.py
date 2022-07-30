@@ -163,11 +163,13 @@ async def get_comment(request: Request, sid: int, key: str, page: int = 1, db: S
             two_comments = crud.db_get_reply_comment(key, sid, rid, db)
             comm['is_admin'] = check_admin(comm['name'], comm['email'])
             comm['child'] = []
+            del comm['email']
             for t_item in two_comments:
                 co = schemas.GetComment.from_orm(t_item).dict()
                 id_names[co['id']] = co['name']
                 co['p_name'] = id_names.get(co['pid'], '未知用户')
                 co['is_admin'] = check_admin(co['name'], co['email'])
+                del co['email']
                 comm['child'].append(co)
             data.append(comm)
         return reponse(data=data)

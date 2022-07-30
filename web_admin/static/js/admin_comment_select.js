@@ -94,7 +94,7 @@ function commentTree(commentList){
             return '';
         });
         img_box+='</div>'
-        var temps = '<div class="com_body '+flag+'"><div class="com_name">'+row.name+' ['+row.email+']'+(row.is_admin?'<span class="com_admin">管理</span>':'')+'<span class="com_time">'+row.create_time+'</span><a href="javascript:do_reply('+row.id+','+(row.rid==0?row.id:row.rid)+',\''+row.name+'\',this)" class="com_button_reply">回复</a><a href="javascript:del_comment('+row.id+')" class="com_button_reply">删除</a></div><div class="com_content">'+reply_name + row.content+'</div>'+img_box+'</div>';
+        var temps = '<div class="com_body '+flag+'"><div class="com_name">'+row.name+(row.is_admin?'<span class="com_admin">管理</span>':'')+'<span class="com_time">'+row.create_time+'</span><a href="javascript:do_reply('+row.id+','+(row.rid==0?row.id:row.rid)+',\''+row.name+'\',this)" class="com_button_reply">回复</a><a href="javascript:del_comment('+row.id+')" class="com_button_reply">删除</a></div><div class="com_content">'+reply_name + row.content+'</div>'+img_box+'</div>';
         comment_str += temps;
         if (row.child && row.child.length>0){
             comment_str += "<div class='replay_body'>"+commentTree(row.child)+"</div>";
