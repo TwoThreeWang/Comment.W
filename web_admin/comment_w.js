@@ -78,7 +78,7 @@ function add_yan(con){
 /* 添加图片链接 */
 function add_img(){
 	var img_url = prompt("请输入图片链接：");
-	document.getElementById("comment_text").value+=`![](${img_url})`;
+	if(img_url){document.getElementById("comment_text").value+=`![](${img_url})`;}
 }
 /* 退出登录 */
 function com_login_out(){
