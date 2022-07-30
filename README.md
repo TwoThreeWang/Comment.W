@@ -16,6 +16,8 @@ DEMO: [https://comment.wangtwothree.com/](https://comment.wangtwothree.com/)
 
 # 评论界面
 
+![图片alt](https://cdn.wangtwothree.com/imgur/lmSsaM7.png)
+
 ![图片alt](https://cdn.wangtwothree.com/imgur/rEBiQpV.png)
 
 # 功能特性
