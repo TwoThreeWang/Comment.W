@@ -96,6 +96,9 @@ def check_site(request, sid, db):
 
 # 新评论发送邮件通知
 def do_send_mail(request, item, db):
+    # 管理员用户评论无需发送邮件
+    if check_admin(item.name, item.email):
+        return
     host = request.headers.get("referer", "")
     s_data = crud.db_get_site_by_id(db, item.site_id)
     s_data = schemas.GetSite.from_orm(s_data).dict() if s_data else {}
