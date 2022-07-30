@@ -15,9 +15,13 @@ class MailUtils(object):
         config.read('config.ini')
         self.user = config['EMAIL']["user"]
         password = config['EMAIL']["password"]
+        self.flag = config['EMAIL']["flag"]
         self.server = zmail.server(self.user, password)
 
     def send(self, mail_info):
+        if self.flag == '0':
+            print('未配置邮箱登录信息！')
+            return True
         if mail_info['email'] and mail_info['email'] != '':
             mail = {
                 'subject': f'您在 {mail_info["site_name"]} 的评论有新的回复!',

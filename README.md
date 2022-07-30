@@ -172,7 +172,7 @@ location ^~ /api/
 
 - 后台接口根据用户真实 IP 限制流量，默认一个用户每分钟最大请求数量为 20 次，限制策略可在 main.py 中修改
 - 可设置多管理员，`routers/auth.py` 文件中 `USER_LIST` 参数为管理员用户设置
-- 如果要使用邮件通知功能，请修改 config.ini 中的邮箱账号配置，部分邮箱需要使用客户端专用密码，邮箱配置参考：https://github.com/zhangyunhao116/zmail/blob/master/README-cn.md
+- 如果要使用邮件通知功能，请修改 config.ini 中的邮箱账号配置，flag 字段为是否启用邮件通知标识，部分邮箱需要使用客户端专用密码，邮箱配置参考：https://github.com/zhangyunhao116/zmail/blob/master/README-cn.md
 
 **二、前端部署**
 
