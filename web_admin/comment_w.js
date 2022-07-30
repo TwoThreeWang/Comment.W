@@ -224,3 +224,5 @@ function expandPhoto(item) {
 function restore() {
 	document.body.removeChild(document.getElementById("overlay"));
 }
+/** 适配移动端 active 效果 **/
+document.body.addEventListener('touchstart', function () { });
