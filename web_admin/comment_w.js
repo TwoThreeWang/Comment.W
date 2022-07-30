@@ -138,7 +138,6 @@ function get_comments(page=1){
 	    more_msg.innerHTML=" (ง •̀_•́)ง 评论数据加载中...";
 	  }, 
 	  success:function(result){
-	  		console.log(result);
 	  		if(result['data'] instanceof Array){
 				var comment_data = commentTree(result['data']);
 				if(comment_data!==''){
