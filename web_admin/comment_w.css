@@ -4,8 +4,7 @@
 .com_name{font-weight:600}
 .com_time{font-weight:300;font-size:small;color:#a1a1a1;margin-left:10px}
 .com_admin{background-color:#d7e0ff;border-radius:3px;padding:3px 5px;font-size:10px;margin-left:5px}
-.com_button_reply{font-size:small;color:#a1a1a1;margin-left:10px;text-decoration:none;display:none}
-.com_body:hover .com_button_reply,.com_body:active com_button_reply{display:inline}
+.com_button_reply{font-size:small;color:#a1a1a1;margin-left:10px;text-decoration:none;}
 .com_content{padding:6px 10px}
 .com_reply{background-color:#f9f9f9;margin:0 0 3px 30px;padding:5px 8px}
 .com_reply_body{padding:5px}
